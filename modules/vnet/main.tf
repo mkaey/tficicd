@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "vnet" {
   address_space = ["192.168.0.0/24"]
 
   subnet {
-    name             = "subnet-storage"
+    name             = "subnet-01"
     address_prefixes = ["192.168.0.0/28"]
   }
 }
