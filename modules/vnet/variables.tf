@@ -12,3 +12,8 @@ variable "location" {
   description = "Location of the Resources created"
   type        = any
 }
+
+variable "resource_group_name" {
+  description = "Resource Group Name"
+  type        = string
+}
