@@ -1,0 +1,7 @@
+output "environment" {
+  value = var.environment
+}
+
+output "location" {
+  value = var.location
+}
