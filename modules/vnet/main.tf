@@ -4,10 +4,13 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = var.resource_group_name
   location            = var.location
 
-  address_space = ["192.168.0.0/24"]
+  address_space = var.vnet_address_space
 
-  subnet {
-    name             = "subnet-01"
-    address_prefixes = ["192.168.0.0/28"]
+  dynamic "subnet" {
+    for_each = var.subnets
+    content {
+      name             = subnet.key
+      address_prefixes = subnet.value.address_prefixes
+    }
   }
 }
